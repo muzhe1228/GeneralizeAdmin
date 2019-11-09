@@ -1,0 +1,886 @@
+@import './variable';
+/* *********************公用************************** */
+.custom_inp {
+    width: 100%;
+    width: 100%;
+    height: 44px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #e6e6e6;
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 0 16px;
+        font-size: 16;
+        placeholderColor($color9, 16px);
+    }
+}
+.custom_bigBtn {
+    width: 100%;
+    height: 44px;
+    background-color: $btnBg;
+    border-radius: 6px;
+    font-size: 16px;
+    color: $write;
+    &:disabled {
+        background-color: $disBtn;
+    }
+}
+.bgMain {
+    width: 100%;
+    height: 232px;
+    background: url('./assets/Images/bg_home.png') no-repeat center / cover;
+}
+// subHeader
+.subHeader {
+    &_top {
+        padding: 16px;
+        .title {
+            position: relative;
+            padding-top: 34px;
+            display: flex;
+            font-size: 18px;
+            color: $write;
+            &_icon {
+                position: absolute;
+                img {
+                    width: 20px;
+                    vertical-align: middle;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -9px;
+                    left: -9px;
+                    right: -9px;
+                    bottom: -9px;
+                }
+            }
+            &_size {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    &_wrap {
+        height: 60px;
+        position: relative;
+    }
+    &_info {
+        position: absolute;
+        top: -144px;
+        left: 0;
+        height: 188px;
+        width: 100%;
+        padding: 32px 16px 0 16px;
+        .avatar {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            border-radius: 32px;
+            overflow: hidden;
+            top: 0;
+            left: 50%;
+            margin-left: -32px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            background-color: $write;
+            padding-top: 48px;
+            &_label {
+                font-size: 14px;
+                color: $color6;
+                text-align: center;
+                margin-bottom: 12px;
+            }
+            &_fund {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                font-size: 32px;
+                span {
+                    margin-left: 8px;
+                    font-size: 14px;
+                    color: $color6;
+                }
+            }
+            &_btc {
+                color: $color3;
+                font-size: 16px;
+                text-align: center;
+                padding: 8px 0 30px 8px;
+            }
+            &_btn {
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                button {
+                    width: 46%;
+                    height: 40px;
+                    border-radius: 4px;
+                    background-color: $btnBg;
+                    color: $write;
+                    font-size: 16px;
+                }
+            }
+            &_profit {
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                div {
+                    width: 50%;
+                    font-size: 14px;
+                    p {
+                        text-align: center;
+                        &:first-child {
+                            color: $color9;
+                            margin-bottom: 10px;
+                        }
+                        &:last-child {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ******************************登录****************************** */
+.login {
+    h2 {
+        padding: 0 24px;
+        font-size: 20px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+    &_wrap {
+        subScroll(60px, 0);
+        padding: 0 24px;
+    }
+    &_logo {
+        text-align: center;
+        margin-top: 106px;
+        margin-bottom: 100px;
+        .logo {
+            width: 92px;
+        }
+        .logo_size {
+            width: 124px;
+            margin-top: 24px;
+        }
+    }
+    .custom_bigBtn {
+        margin-top: 40px;
+    }
+}
+/* ************************首页***************************** */
+.home {
+    subScroll();
+    &_top {
+        color: $write;
+        .title {
+            font-size: 18px;
+            padding: 40px;
+            text-align: center;
+        }
+        .info {
+            display: flex;
+            justify-content: center;
+            &_avatar {
+                margin-right: 12px;
+                width: 48px;
+                height: 48px;
+                border-radius: 24px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &_cont {
+                font-size: 16px;
+                p {
+                    margin-bottom: 8px;
+                }
+                .info {
+                    font-size: 13px;
+                    span {
+                        padding-right: 12px;
+                    }
+                }
+            }
+        }
+    }
+    &_banner {
+        padding: 20px 16px;
+        width: 100%;
+        height: 104px;
+        img {
+            height: 64px;
+            width: 100%;
+            border-radius: 32px;
+        }
+    }
+    &_wrap {
+        padding: 0 16px;
+        .title {
+            font-size: 16px;
+            font-weight: 700;
+            padding-bottom: 6px;
+        }
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .single {
+                padding: 22px 0;
+                width: 33%;
+                text-align: center;
+                .icon36 {
+                    width: 36px;
+                }
+                .icon29 {
+                    width: 29px;
+                }
+                .icon31 {
+                    width: 31px;
+                }
+                p {
+                    padding-top: 16px;
+                    font-size: 14px;
+                    color: $color6;
+                }
+            }
+        }
+    }
+}
+/* **************************财务中心***************************** */
+.finance {
+    // &_wrap {
+    // subScroll(346px, 0);
+    // }
+    &_menu {
+        width: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        .single {
+            width: calc(50% - 8px);
+            background-color: $write;
+            height: 92px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            &:first-child {
+                img {
+                    width: 30px;
+                }
+            }
+            img {
+                width: 25px;
+            }
+            p {
+                font-size: 15px;
+                padding-top: 8px;
+            }
+        }
+    }
+    &_list {
+        subScroll(470px, 0);
+        padding: 0 16px 16px 16px;
+        .single {
+            width: 100%;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            background-color: $write;
+            border-radius: 8px;
+            padding: 14px 16px;
+            position: relative;
+            margin-bottom: 10px;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 16px;
+                width: 2px;
+                height: 32px;
+                border-radius: 1px;
+                background-color: $blue;
+            }
+            &_left {
+                p {
+                    &:first-child {
+                        font-size: 16px;
+                    }
+                    &:last-child {
+                        margin-top: 7px;
+                        font-size: 13px;
+                        color: $color9;
+                    }
+                }
+            }
+            &_right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                p {
+                    &:first-child {
+                        font-size: 20px;
+                        span {
+                            font-size: 13px;
+                        }
+                    }
+                    &:nth-child(2) {
+                        font-size: 13px;
+                        color: $color9;
+                        text-align: right;
+                        margin-top: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* **************************财务明细***************************** */
+.financeDetail {
+    // &_wrap {
+    // subScroll(362px, 76px);
+    // }
+    &_list {
+        border-radius: 8px;
+        overflow: hidden;
+        .listHead {
+            padding: 16px 16px 0;
+            width: 100%;
+            .head {
+                display: flex;
+                font-size: 12px;
+                color: $color9;
+                background-color: $write;
+                padding: 0 16px;
+                border-radius: 8px 8px 0 0;
+                li {
+                    background-color: $write;
+                    display: flex;
+                    align-items: center;
+                    width: 30%;
+                    height: 32px;
+                    &:first-child {
+                        width: 40%;
+                    }
+                    &:last-child {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .List {
+            subScroll(394px, 76px);
+            width: calc(100% - 32px);
+            left: 16px;
+            background-color: $write;
+            border-radius: 0 0 8px 8px;
+            &_wrap {
+                overflow: hidden;
+                padding: 0 16px;
+            }
+            &_single {
+                display: flex;
+                font-size: 13px;
+                li {
+                    display: flex;
+                    align-items: center;
+                    width: 30%;
+                    height: 32px;
+                    &:first-child {
+                        width: 40%;
+                        color: $color6;
+                    }
+                    &:last-child {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+    &_bot {
+        width: 100%;
+        height: 76px;
+        padding: 16px;
+        position: absolute;
+        bottom: 0;
+        .wrap {
+            background-color: $write;
+            height: 44px;
+            width: 100%;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            padding: 0 16px;
+            p:last-child {
+                font-weight: 700;
+            }
+        }
+    }
+}
+/* **************************转账 => 提币***************************** */
+.accounts, .mention {
+    &_wrap {
+        subScroll(292px, 0);
+        padding: 0 16px;
+    }
+    &_form {
+        padding: 20px 24px 30px 24px;
+        background-color: $write;
+        border-radius: 8px;
+        .form_single {
+            margin-bottom: 22px;
+            .label {
+                font-size: 16px;
+                padding-bottom: 14px;
+            }
+        }
+    }
+    &_tips {
+        margin-top: 16px;
+        padding: 24px;
+        background-color: $write;
+        border-radius: 8px;
+        font-size: 13px;
+        .title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .text {
+            line-height: 1.5;
+        }
+    }
+}
+/* ************************充币***************************** */
+.charge {
+    &_wrap {
+        subScroll(292px, 0);
+        padding: 0 16px;
+    }
+    &_code {
+        padding: 40px 24px;
+        background-color: $write;
+        .img {
+            width: 100%;
+            height: 128px;
+            text-align: center;
+            img {
+                width: 128px;
+                height: 100%;
+            }
+        }
+        .tips {
+            padding-top: 20px;
+            padding-bottom: 44px;
+            text-align: center;
+            font-size: 13px;
+            color: $color9;
+        }
+        .hash {
+            background-color: #e6e6e6;
+            padding: 16px;
+            font-size: 15px;
+            word-break: break-all;
+            line-height: 1.5;
+            color: $color6;
+        }
+    }
+}
+/* **********************合伙人级别**************************** */
+.level {
+    &_top {
+        .title {
+            padding: 60px 16px 22px 16px;
+            position: relative;
+            display: flex;
+            font-size: 18px;
+            color: $write;
+            &_icon {
+                position: absolute;
+                img {
+                    width: 20px;
+                    vertical-align: middle;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -9px;
+                    left: -9px;
+                    right: -9px;
+                    bottom: -9px;
+                }
+            }
+            &_size {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    &_wrap {
+        subScroll(100px, 0);
+        background-color: $write;
+        padding: 16px;
+    }
+    &_info {
+        background-color: $bgMain;
+        width: 100%;
+        height: 128px;
+        border-radius: 8px;
+        padding: 16px 24px;
+        p {
+            font-size: 16px;
+            padding: 8px 0;
+        }
+        &.bot {
+            margin-top: 32px;
+            color: $color6;
+        }
+    }
+    &_list {
+        padding: 20px 0 32px 0;
+        .title {
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            &:after {
+                content: '';
+                position: absolute;
+                left: -12px;
+                top: 1px;
+                width: 3px;
+                height: 14px;
+                background-color: $blue;
+                border-radius: 2px;
+            }
+        }
+        .subtitle {
+            font-weight: 700;
+        }
+        .subtitle, .text {
+            font-size: 14px;
+            color: $color6;
+            margin-top: 10px;
+        }
+        .text {
+            line-height: 1.5;
+        }
+    }
+}
+/* **********************推广下线*************************** */
+.insert {
+    &_top {
+        .title {
+            padding: 60px 16px 22px 16px;
+            position: relative;
+            display: flex;
+            font-size: 18px;
+            color: $write;
+            &_icon {
+                position: absolute;
+                img {
+                    width: 20px;
+                    vertical-align: middle;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -9px;
+                    left: -9px;
+                    right: -9px;
+                    bottom: -9px;
+                }
+            }
+            &_size {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    &_wrap {
+        subScroll(100px, 0);
+        padding: 0 16px;
+    }
+    &_info {
+        padding: 24px;
+        width: 100%;
+        background-color: $write;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(23, 230, 255, 0.1);
+        .title {
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .code {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            img {
+                width: 142px;
+                height: 142px;
+                vertical-align: top;
+            }
+        }
+        .shareBtn {
+            text-align: center;
+            .share {
+                width: 50%;
+                height: 40px;
+            }
+        }
+        .tips {
+            text-align: center;
+            padding: 8px;
+        }
+        .border {
+            width: 100%;
+            margin: 30px 0;
+            border-bottom: 1px dashed $btnBg;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: $bgMain;
+                border-radius: 20px;
+                left: -40px;
+                top: -20px;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: $bgMain;
+                border-radius: 20px;
+                right: -40px;
+                top: -20px;
+            }
+        }
+        .location {
+            width: 100%;
+            height: 36px;
+            background-color: $btnBg;
+            border-radius: 8px;
+            font-size: 15px;
+            padding-top: 10px;
+            text-align: center;
+            color: $write;
+            margin-bottom: 8px;
+        }
+    }
+    &_banner {
+        padding-top: 24px;
+        .banner {
+            width: 100%;
+            height: 86px;
+            background-color: $colorE;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+/* **********************下线列表*************************** */
+.insertList, .profit {
+    &_top {
+        .title {
+            padding: 60px 16px 22px 16px;
+            position: relative;
+            display: flex;
+            font-size: 18px;
+            color: $write;
+            &_icon {
+                position: absolute;
+                img {
+                    width: 20px;
+                    vertical-align: middle;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -9px;
+                    left: -9px;
+                    right: -9px;
+                    bottom: -9px;
+                }
+            }
+            &_size {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    &_wrap {
+        subScroll(100px, 0);
+        background-color: $write;
+        padding: 16px;
+    }
+    &_search {
+        width: 100%;
+        height: 150px;
+        background-color: $bgMain;
+        border-radius: 8px;
+        padding: 16px;
+        .title {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .dateRange {
+            padding-top: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            .left {
+                padding-right: 8px;
+            }
+            .mid {
+                padding: 0 8px;
+            }
+        }
+        .uuid {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            .custom_inp {
+                height: 32px;
+                width: 190px;
+                font-size: 13px;
+                input {
+                    placeholderColor($color9, 13px);
+                }
+            }
+            .custom_bigBtn {
+                height: 32px;
+                font-size: 13px;
+                width: 114px;
+            }
+        }
+    }
+    &_mid {
+        margin-top: 20px;
+        background-color: $btnBg;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+        border-radius: 6px;
+        font-size: 14px;
+        color: $write;
+        padding: 0 16px;
+    }
+    &_list {
+        border-radius: 8px;
+        overflow: hidden;
+        .listHead {
+            padding-top: 16px;
+            width: 100%;
+            .head {
+                display: flex;
+                font-size: 12px;
+                color: $color9;
+                background-color: $write;
+                border-radius: 8px 8px 0 0;
+                li {
+                    background-color: $write;
+                    display: flex;
+                    align-items: center;
+                    width: 36%;
+                    height: 32px;
+                    &:first-child {
+                        width: 28%;
+                    }
+                    &:last-child {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .List {
+            subScroll(274px, 16px);
+            left: 0;
+            width: 100%;
+            background-color: $write;
+            border-radius: 0 0 8px 8px;
+            padding: 0 16px;
+            &_wrap {
+                overflow: hidden;
+            }
+            &_single {
+                display: flex;
+                font-size: 13px;
+                li {
+                    display: flex;
+                    align-items: center;
+                    width: 36%;
+                    height: 32px;
+                    &:first-child {
+                        width: 28%;
+                        color: $color6;
+                    }
+                    &:last-child {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
+/* **********************下线分成数据*************************** */
+.profit {
+    &_search {
+        .uuid {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &_mid {
+        display: flex;
+        justify-content: space-between;
+    }
+    &_list {
+        .listHead {
+            .head {
+                li {
+                    width: 18%;
+                    &:first-child {
+                        width: 26%;
+                    }
+                }
+            }
+        }
+        .List {
+            &_single {
+                li {
+                    width: 18%;
+                    &:first-child {
+                        width: 26%;
+                    }
+                }
+            }
+        }
+    }
+}
