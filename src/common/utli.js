@@ -565,7 +565,7 @@ function isAction(str, err) {
 function isEmail(str, err) {
   //email
   if (str.trim()) {
-    var reg =/^([a-zA-Z]|[0-9])(\w|[^%&',;=?$\x22]+)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    var reg = /^([a-zA-Z]|[0-9])(\w|[^%&',;=?$\x22]+)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
     let isTrue = reg.test(str);
     if (!isTrue) {
       return err ? err : "邮箱格式有误！";
@@ -678,6 +678,33 @@ function isAddress(str, err) {
     return "提币地址不能为空";
   }
 }
+function isUuid(str, err) {
+  if (str.trim()) {
+    //验证码
+    var reg = /^\d{10}$/;
+    let isTrue = reg.test(str);
+    if (!isTrue) {
+      return err ? err : "uuid为10位数字";
+    }
+    return false;
+  } else {
+    return "uuid不能为空";
+  }
+}
+
+function isNumPrice(str, err) {
+  if (str.trim()) {
+    //验证码
+    var reg = /^(\d|([1-9]\d+))(\.\d+)?$/;
+    let isTrue = reg.test(str);
+    if (!isTrue) {
+      return err ? err : "请输入数字";
+    }
+    return false;
+  } else {
+    return "不能为空";
+  }
+}
 function random(lower, upper) {
   return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 }
@@ -715,5 +742,7 @@ export {
   isPhone,
   isNum,
   isAddress,
+  isUuid,
+  isNumPrice,
   random
 };

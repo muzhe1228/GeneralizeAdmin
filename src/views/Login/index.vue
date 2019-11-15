@@ -12,25 +12,70 @@
       </div>
       <div class="login_form">
         <p class="custom_inp">
-          <input type="text" placeholder="请输入您的账号" />
+          <input
+            type="text"
+            v-model="loginData.loginName"
+            v-debounce="{
+              fn: verify,
+              method: 'input'
+            }"
+            placeholder="请输入您的账号"
+          />
         </p>
         <p class="custom_inp">
-          <input type="password" placeholder="请输入你的登录密码" />
+          <input
+            type="password"
+            v-model="loginData.loginPwd"
+            @keyup.enter="login"
+            v-debounce="{
+              fn: verify,
+              method: 'input'
+            }"
+            placeholder="请输入你的登录密码"
+          />
         </p>
       </div>
-      <button class="custom_bigBtn" :disabled="disabled">登录</button>
+      <button class="custom_bigBtn" @click="login(loginData)" :disabled="isClick">登录</button>
     </div>
   </div>
 </template>
 
 <script>
+import { isAccount, isPwd } from "common/utli";
+import { loginHandle } from "common/http-req";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      disabled: false
+      isClick: true,
+      loginData: {
+        loginName: "13800138003",
+        loginPwd: "a666666",
+        type: 0
+      }
     };
   },
   components: {},
-  methods: {}
+  mounted() {
+    this.verify();
+  },
+  methods: {
+    login(req) {
+      loginHandle(req).then(res => {
+        if (res.status == this.STATUS) {
+          this.$lStore.set("token", res.data.token);
+          this.updatedUserInfo(res.data);
+          this.$router.push("/");
+        }
+      });
+    },
+    verify() {
+      let pwdStr, loginNameStr;
+      pwdStr = isPwd(this.loginData.loginPwd);
+      loginNameStr = isAccount(this.loginData.loginName);
+      pwdStr || loginNameStr ? (this.isClick = true) : (this.isClick = false);
+    },
+    ...mapActions(["updatedUserInfo"])
+  }
 };
 </script>

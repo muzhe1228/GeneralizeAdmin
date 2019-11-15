@@ -4,7 +4,7 @@
     <div class="charge_wrap">
       <div class="charge_code">
         <p class="img">
-          <img src="http://qr.liantu.com/api.php?text=123" alt />
+          <img :src="`http://qr.liantu.com/api.php?text=${hash}`" alt />
         </p>
         <p class="tips">请使用数字钱包扫码进行充值</p>
         <p
@@ -20,17 +20,35 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import subHeader from "components/subHeader";
+import { getAddressList } from "common/http-req";
 export default {
   data() {
     return {
-      List: new Array(10),
-      disabled: false,
-      hash: "lkdasfdfcvv2vcv0vd21v3f0v0.r2v1vfvrvev0.vsvs.0vsvsdv3130"
+      hash: ""
     };
   },
+  computed: {
+    ...mapState(["userInfo"])
+  },
   components: { subHeader },
+  mounted() {
+    this._initPage();
+  },
   methods: {
+    _initPage() {
+      this.getAddress();
+    },
+    getAddress() {
+      getAddressList({ coinType: "USDT", userId: this.userInfo.userId }).then(
+        res => {
+          if (res.status == this.STATUS) {
+            this.hash = res.data.rechargeAdd;
+          }
+        }
+      );
+    },
     onSuccess() {
       this.$toast("复制成功");
     },

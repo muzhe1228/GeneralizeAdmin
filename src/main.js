@@ -8,6 +8,7 @@ import "./common/filter";
 import FastClick from "fastclick";
 import "./assets/stylus/reset.styl";
 import VueClipboard from "vue-clipboard2";
+import { List, PullRefresh, Toast, Icon } from "vant";
 FastClick.prototype.onTouchEnd = function() {};
 if ("addEventListener" in document) {
   document.addEventListener(
@@ -18,7 +19,11 @@ if ("addEventListener" in document) {
     false
   );
 }
-Vue.use(VueClipboard);
+Vue.use(VueClipboard)
+  .use(List)
+  .use(PullRefresh)
+  .use(Toast)
+  .use(Icon);
 Vue.config.productionTip = false;
 
 new Vue({

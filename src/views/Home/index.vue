@@ -7,11 +7,11 @@
           <img src="~assets/Images/logo.png" alt />
         </li>
         <li class="info_cont">
-          <p>ID:215342</p>
+          <p>ID:{{userInfo.uuid}}</p>
           <p>您好，欢迎加入币通</p>
           <p class="info">
-            <span>账号：15560048888</span>
-            <span>级别：A级</span>
+            <span>账号：{{userInfo.loginName}}</span>
+            <span>级别：{{userInfo.agentLevel}}级</span>
           </p>
         </li>
       </ul>
@@ -42,19 +42,23 @@
           <img class="icon36" src="~assets/Images/icon_5.png" alt />
           <p>合伙级别</p>
         </router-link>
-        <li class="single">
+        <router-link to="/edit_pwd" tag="li" class="single">
           <img class="icon29" src="~assets/Images/icon_6.png" alt />
           <p>修改密码</p>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
+  },
+  computed: {
+    ...mapState(["userInfo"])
   },
   components: {},
   methods: {}

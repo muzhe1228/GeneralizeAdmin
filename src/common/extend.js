@@ -9,6 +9,7 @@ import {
   lStore,
   sStore
 } from "./utli";
+import md5 from "md5";
 function ScrollTop(anim = true) {
   if (anim) {
     let scrollToptimer = setInterval(function() {
@@ -65,6 +66,7 @@ Vue.prototype.$control = control;
 Vue.prototype.$http = http;
 Vue.prototype.$EventListener = EventListener({});
 Vue.prototype.$addEvent = addEvent;
+Vue.prototype.$md5 = md5;
 Vue.prototype.$removeEvent = removeEvent;
 Vue.prototype.$Refresh = Refresh;
 Vue.prototype.$timeSet = timerHandle;

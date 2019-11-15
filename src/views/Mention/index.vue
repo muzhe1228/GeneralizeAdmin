@@ -4,15 +4,19 @@
     <div class="mention_wrap">
       <div class="mention_form">
         <div class="form_single">
-          <p class="label">用户ID</p>
-          <p class="custom_inp">
+          <p class="label">提币地址</p>
+          <router-link tag="p" to="/coin_address" class="seletAddress">
+            选择提币地址
+            <van-icon class="icon" name="arrow" />
+          </router-link>
+          <!-- <p class="custom_inp">
             <input type="text" placeholder="请输入提币地址" />
-          </p>
+          </p>-->
         </div>
         <div class="form_single">
           <p class="label">提币数量</p>
           <p class="custom_inp">
-            <input type="text" placeholder="请输入提币数量" />
+            <input type="number" placeholder="请输入提币数量" />
           </p>
         </div>
         <button class="custom_bigBtn" :disabled="disabled">确定</button>

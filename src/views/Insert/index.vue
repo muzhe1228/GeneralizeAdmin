@@ -12,12 +12,15 @@
       <div class="insert_info">
         <p class="title">专属推广二维码</p>
         <p class="code">
-          <img src="http://qr.liantu.com/api.php?text=123" alt />
+          <img
+            :src="`http://testweb.asiabitmex.com/auth/image/get?imageContent=http://www.cnbtc88.com/H5/inviteReg/?userCode=${userInfo.userCode}`"
+            alt
+          />
         </p>
         <p class="shareBtn">
           <button
             class="custom_bigBtn share"
-            v-clipboard:copy="url"
+            v-clipboard:copy="`http://www.cnbtc88.com/H5/inviteReg/?userCode=${userInfo.userCode}`"
             v-clipboard:success="onSuccess"
             v-clipboard:error="onError"
           >立即分享</button>
@@ -26,30 +29,34 @@
         <p class="border"></p>
         <p
           class="location"
-          v-clipboard:copy="url"
+          v-clipboard:copy="`http://www.cnbtc88.com/H5/inviteReg/?userCode=${userInfo.userCode}`"
           v-clipboard:success="onSuccess"
           v-clipboard:error="onError"
-        >{{url}}</p>
+        >{{`http://www.cnbtc88.com/H5/inviteReg/?userCode=${userInfo.userCode}`}}</p>
         <p class="tips color9">长按复制专属推广链接发展下级用户</p>
       </div>
       <div class="insert_banner">
-          <p class="banner">
-            <img src="~assets/Images/banner.png" alt="">
-          </p>
-          <p class="banner">
-             <img src="~assets/Images/banner.png" alt="">
-          </p>
+        <p class="banner">
+          <img src="~assets/Images/banner.png" alt />
+        </p>
+        <p class="banner">
+          <img src="~assets/Images/banner.png" alt />
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       url: "http://192.168.0.124:8080/insert"
     };
+  },
+  computed: {
+    ...mapState(["userInfo"])
   },
   components: {},
   methods: {

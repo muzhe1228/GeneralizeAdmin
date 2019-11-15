@@ -59,6 +59,21 @@ const routes = [
     path: "/profit", //下线分成数据
     name: "Profit",
     component: () => import("views/Profit")
+  },
+  {
+    path: "/edit_pwd", //修改密码
+    name: "EditPwd",
+    component: () => import("views/EditPwd")
+  },
+  {
+    path: "/user_search", //用户搜索
+    name: "UserSearch",
+    component: () => import("views/UserSearch")
+  },
+  {
+    path: "/coin_address", //币地址管理
+    name: "CoinAddress",
+    component: () => import("views/CoinAddress")
   }
 ];
 

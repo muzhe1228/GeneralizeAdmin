@@ -16,10 +16,10 @@
         <div class="info">
           <p class="info_label">资产总额</p>
           <p class="info_fund">
-            8,900.68
+            {{headeData.amount}}
             <span>USDT</span>
           </p>
-          <p class="info_btc">≈0.7 BTC</p>
+          <p class="info_btc">≈{{headeData.btcAmount}} BTC</p>
           <slot></slot>
         </div>
       </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { assertsTotal } from "common/http-req";
 export default {
   props: {
     Heig: {
@@ -44,9 +45,22 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      headeData: {}
+    };
   },
-  components: {},
-  methods: {}
+  mounted() {
+    this.getAssertsTotal();
+  },
+  methods: {
+    //请求我的资产
+    getAssertsTotal() {
+      assertsTotal().then(res => {
+        if (res.status == this.STATUS) {
+          this.headeData = res.data;
+        }
+      });
+    }
+  }
 };
 </script>
